@@ -1,28 +1,34 @@
-from django.shortcuts import render
 import requests
+from django.shortcuts import render
 from .models import City
+from .forms import CityForm
 
 def index(request):
-    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=b96cd015fa463db4e857206ce8405bbc'
+    url = 'http://api.openweathermap.org/data/2.5/weather?q={}&units=imperial&appid=572f8499228d3a5fdf22a27c13cf2b74'
+
+    if request.method == 'POST':
+        form = CityForm(request.POST)
+        form.save()
+
+    form = CityForm()
+
     cities = City.objects.all()
-    city = 'Las Vegas'
-    city_weather = requests.get(url.format(city)).json() #request the API data and convert the JSON to Python data types
 
     weather_data = []
 
     for city in cities:
 
-        city_weather = requests.get(url.format(city)).json() #request the API data and convert the JSON to Python data types
+        r = requests.get(url.format(city)).json()
 
-
-        weather = {
-            'city' : city,
-            'temperature' : city_weather['main']['temp'],
-            'description' : city_weather['weather'][0]['description'],
-            'icon' : city_weather['weather'][0]['icon']
+        city_weather = {
+            'city' : city.name,
+            'temperature' : r['main']['temp'],
+            'description' : r['weather'][0]['description'],
+            'icon' : r['weather'][0]['icon'],
+            'feelslike_weather': r['main']['feels_like'],
         }
 
-        weather_data.append(weather)
+        weather_data.append(city_weather)
 
-    context = {'weather_data' : weather_data}
-    return render(request, 'weather/index.html') #returns the index.html template
+    context = {'weather_data' : weather_data, 'form' : form}
+    return render(request, 'weather/weather.html', context)
