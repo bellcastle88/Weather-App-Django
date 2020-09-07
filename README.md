@@ -1,9 +1,21 @@
 # Weather-App-Django
 
-Weather-App with Django
+A weather website which can see every city of weather in the world 🌈
 
-It will keep updated as soon as possible.
+A simple, reponsive website. Built with:
 
-my blog https://proglish.tistory.com/
+- Python 
+- Django 
 
-refer to https://www.digitalocean.com/community/tutorials/how-to-build-a-weather-app-in-django
+## Description
+
+
+
+## Screenshots
+
+
+
+## Acknowledgments
+
+* [Anthony Herbert]( https://www.digitalocean.com/community/tutorials/how-to-build-a-weather-app-in-django )
+
