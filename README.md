@@ -9,7 +9,11 @@ A simple, reponsive website. Built with:
 
 ## Description
 
+This is a simple weather website. it used a OpenAPI from openweathermap.org
 
+- Add scadule 
+- Delete, update 
+- Cheak a finsied scadule 
 
 ## Screenshots
 
