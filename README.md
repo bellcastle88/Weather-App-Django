@@ -18,11 +18,12 @@ This is a simple weather website. it used a OpenAPI from openweathermap.org
 ## Get the project
 
 Get the source code and install runtime requirements:
-
-git clone --recursive git://github.com/alicevision/meshroom
-cd meshroom
+```
+git clone git@github.com:bellcastle88/Weather-App-Django.git
+cd Weather-App-Django
 pip install -r requirements.txt
 
+```
 
 ## Acknowledgments
 
