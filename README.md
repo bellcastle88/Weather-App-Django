@@ -6,6 +6,7 @@ A simple, reponsive website. Built with:
 
 - Python 
 - Django 
+- MySQL
 
 ## Description
 
