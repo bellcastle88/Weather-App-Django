@@ -14,7 +14,7 @@ This is a simple weather website. It used a OpenAPI from openweathermap.org
 
 - Add scadule 
 - Delete, update 
-- Cheak a finsied scadule 
+- Cheak a finsied schedule 
 
 ## Get the project
 
